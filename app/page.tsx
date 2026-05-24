@@ -434,7 +434,7 @@ export default function Home() {
                 <div className="space-y-3.5 text-xs text-zinc-305" id="contact-items">
                   <div className="flex items-center gap-3">
                     <MapPin className="h-5 w-5 text-emerald-450 flex-none" />
-                    <span>Kawasan Industri Lingkungan Hidup, Gedung C, JKT</span>
+                    <span>Perum Dompak Indah, Jalan Batu Naga Blok D No. 2, Batu Ix, Dompak, Kota Tanjung Pinang, Kepulauan Riau, 29124.</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <Mail className="h-5 w-5 text-emerald-450 flex-none" />

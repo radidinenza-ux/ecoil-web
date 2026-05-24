@@ -238,50 +238,72 @@ export default function UserDashboardPage() {
           <div className="md:col-span-12 lg:col-span-7" id="logs-col">
             <div className="bg-white rounded-2xl border border-zinc-200 p-6 shadow-sm" id="logs-card">
               <h3 className="text-base font-bold text-zinc-900 mb-4" id="history-title">Riwayat Log Setoran</h3>
-              
-              {userDeposits.length === 0 ? (
-                <div className="text-center py-12 text-zinc-400 border-2 border-dashed border-zinc-100 rounded-xl" id="empty-history-wrapper">
-                  <Calendar className="h-8 w-8 text-zinc-300 mx-auto mb-2" />
-                  <p className="text-xs">Belum ada riwayat setoran minyak jelantah.</p>
-                </div>
-              ) : (
-                <div className="overflow-x-auto scrollbar-thin" id="table-wrapper">
-                  <table className="w-full text-left text-sm" id="deposits-table">
-                    <thead>
-                      <tr className="border-b border-zinc-100 text-xs font-bold text-zinc-400 uppercase tracking-wider">
-                        <th className="pb-3 pr-2">Tanggal</th>
-                        <th className="pb-3 px-2">Kualitas</th>
-                        <th className="pb-3 px-2">Volume</th>
-                        <th className="pb-3 px-2 text-right">Penghasilan</th>
-                        <th className="pb-3 pl-2 text-right">Status</th>
-                      </tr>
-                    </thead>
-                    <tbody className="divide-y divide-zinc-50 text-xs">
-                      {userDeposits.map((d) => (
-                        <tr key={d.id} className="hover:bg-zinc-50/50" id={`row-item-${d.id}`}>
-                          <td className="py-3 pr-2 font-medium text-zinc-600">{d.date}</td>
-                          <td className="py-3 px-2">
-                            <span className={`px-2 py-0.5 font-bold rounded-full ${
-                              d.grade === "A" ? "bg-emerald-50 text-emerald-700 border border-emerald-100" :
-                              d.grade === "B" ? "bg-blue-50 text-blue-700 border border-blue-100" :
-                              "bg-amber-50 text-amber-700 border border-amber-100"
-                            }`}>
-                              Grade {d.grade}
-                            </span>
-                          </td>
-                          <td className="py-3 px-2 font-mono font-bold text-zinc-800">{d.liters} Liter</td>
-                          <td className="py-3 px-2 text-right font-mono font-black text-emerald-700">
-                            Rp {d.totalEarnings.toLocaleString("id-ID")}
-                          </td>
-                          <td className="py-3 pl-2 text-right">
-                            <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-black tracking-wide ${
-                              d.status === "Selesai" 
-                                ? "bg-emerald-100 text-emerald-800"
-                                : d.status === "Dijadwalkan"
-                                ? "bg-blue-100 text-blue-800 animate-pulse"
-                                : "bg-zinc-100 text-zinc-600"
-                            }`}>
-                              {d.status === "Selesai" ? (
+             {userDeposits.length === 0 ? (
+          <div className="text-center py-12 text-zinc-400 border-2 border-dashed border-zinc-100 rounded-xl" id="empty-history-wrapper">
+            <Calendar className="h-8 w-8 text-zinc-300 mx-auto mb-2" />
+            <p className="text-xs">Belum ada riwayat setoran minyak jelantah.</p>
+          </div>
+        ) : (
+          <div className="overflow-x-auto scrollbar-thin" id="table-wrapper">
+            <table className="w-full text-left text-sm" id="deposits-table">
+              <thead>
+                <tr className="border-b border-zinc-100 text-xs font-bold text-zinc-400 uppercase tracking-wider">
+                  <th className="pb-3 pr-2">Tanggal</th>
+                  <th className="pb-3 px-2">Kualitas</th>
+                  <th className="pb-3 px-2">Volume</th>
+                  <th className="pb-3 px-2 text-right">Penghasilan</th>
+                  <th className="pb-3 pl-2 text-right">Status</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-zinc-50 text-xs">
+                <tr className="hover:bg-zinc-50/50" id="row-item-1">
+                  <td className="py-3 pr-2 font-medium text-zinc-600">2026-05-24</td>
+                  <td className="py-3 px-2">
+                    <span className="px-2 py-0.5 font-bold rounded-full bg-blue-50 text-blue-750 border border-blue-100">Grade B</span>
+                  </td>
+                  <td className="py-3 px-2 font-semibold text-zinc-800">5 Liter</td>
+                  <td className="py-3 px-2 text-right font-mono font-bold text-emerald-700">Rp 10.000</td>
+                  <td className="py-3 pl-2 text-right">
+                    <span className="px-2.5 py-1 rounded-full font-extrabold text-[10px] bg-emerald-50 text-emerald-700 border border-emerald-200">✓ Selesai</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        )} 
+             {userDeposits.length === 0 ? (
+          <div className="text-center py-12 text-zinc-400 border-2 border-dashed border-zinc-100 rounded-xl" id="empty-history-wrapper">
+            <Calendar className="h-8 w-8 text-zinc-300 mx-auto mb-2" />
+            <p className="text-xs">Belum ada riwayat setoran minyak jelantah.</p>
+          </div>
+        ) : (
+          <div className="overflow-x-auto scrollbar-thin" id="table-wrapper">
+            <table className="w-full text-left text-sm" id="deposits-table">
+              <thead>
+                <tr className="border-b border-zinc-100 text-xs font-bold text-zinc-400 uppercase tracking-wider">
+                  <th className="pb-3 pr-2">Tanggal</th>
+                  <th className="pb-3 px-2">Kualitas</th>
+                  <th className="pb-3 px-2">Volume</th>
+                  <th className="pb-3 px-2 text-right">Penghasilan</th>
+                  <th className="pb-3 pl-2 text-right">Status</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-zinc-50 text-xs">
+                <tr className="hover:bg-zinc-50/50" id="row-item-1">
+                  <td className="py-3 pr-2 font-medium text-zinc-600">2026-05-24</td>
+                  <td className="py-3 px-2">
+                    <span className="px-2 py-0.5 font-bold rounded-full bg-blue-50 text-blue-750 border border-blue-100">Grade B</span>
+                  </td>
+                  <td className="py-3 px-2 font-semibold text-zinc-800">5 Liter</td>
+                  <td className="py-3 px-2 text-right font-mono font-bold text-emerald-700">Rp 10.000</td>
+                  <td className="py-3 pl-2 text-right">
+                    <span className="px-2.5 py-1 rounded-full font-extrabold text-[10px] bg-emerald-50 text-emerald-700 border border-emerald-200">✓ Selesai</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        )}
                                 <CheckCircle2 className="h-3 w-3" />
                               ) : (
                                 <Clock className="h-3 w-3 text-zinc-400" />

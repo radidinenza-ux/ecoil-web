@@ -296,7 +296,7 @@ export default function Home() {
                   <span className="text-xl font-black text-zinc-950 font-mono">Rp 27.000</span>
                 </div>
                 <a
-                  href="https://wa.me/6281992020296?text=Halo%20EcoOil,%20saya%20mau%20order%20Lilin%20Aromaterapi%20Lavender%20Varian%20Orange"
+                  href="https://wa.me/6281992020296?text=Halo EcoOil, saya mau order Lilin Aromaterapi Lavender Varian Orange"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full py-3 bg-zinc-950 hover:bg-zinc-800 text-white !text-white rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2 shadow-sm cursor-pointer"
@@ -334,7 +334,7 @@ export default function Home() {
                   <span className="text-xl font-black text-zinc-950 font-mono">Rp 27.000</span>
                 </div>
                 <a
-                  href="https://wa.me/6281992020296?text=Halo%20EcoOil,%20saya%2520mau%20order%20Lilin%20Aromaterapi%20Lavender%20Varian%20Hijau"
+                  href="https://wa.me/6281992020296?text=Halo EcoOil, saya mau order Lilin Aromaterapi Lavender Varian Hijau"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full py-3 bg-zinc-950 hover:bg-zinc-800 text-white !text-white rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2 shadow-sm cursor-pointer"
@@ -358,6 +358,16 @@ export default function Home() {
             <p className="text-xs sm:text-sm text-zinc-550 max-w-2xl mx-auto mt-2 leading-relaxed">
               Inisiatif sirkular kami berkomitmen tinggi menyaring limbah cair berlemak dapur rumah tangga dan sisa katering komersial menjadi lilin aromaterapi dan energi alternatif terbarukan.
             </p>
+            <div className="mt-6 p-4 bg-emerald-50 rounded-xl border border-emerald-100 max-w-xl mx-auto text-center">
+  <p className="text-xs sm:text-sm font-bold text-emerald-800">
+    Kami juga bekerja sama dengan mitra jelantah Kepri yang dimana dari mereka akan dikelola menjadi Biofuel.
+  </p>
+  <p className="text-xs text-zinc-600 mt-2 font-semibold">🏢 PT MITRA JELANTAH KEPRI</p>
+  <div className="flex justify-center gap-4 mt-1 text-[11px] text-zinc-500">
+    <span>📸 IG: @jelantah_tanjungpinang</span>
+    <span>🎵 TikTok: @mitra.jelantah.kepri</span>
+  </div>
+</div>
           </div>
 
           {/* Corporate Dashboard Highlights */}
@@ -449,7 +459,7 @@ export default function Home() {
                   <div className="flex items-center gap-3">
                     <Phone className="h-5 w-5 text-emerald-450 flex-none" />
                     <a 
-                      href="https://wa.me/6281992020296?text=Halo%20EcoOil%20Layanan%20Pusat"
+                      href="https://wa.me/6281992020296?text=Halo EcoOil Layanan Pusat"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="hover:underline hover:text-emerald-400 transition-colors"
@@ -468,7 +478,7 @@ export default function Home() {
                   Gabung sebagai Koordinator Poin daerah kelurahan Anda dan raih profit margin berkelanjutan eksklusif setiap bulan.
                 </p>
                 <a
-                  href="https://wa.me/6281992020296?text=Halo%2520EcoOil%252C%2520saya%2520tertarik%2520mendaftar%2520sebagai%2520Penyetor%2520Teratur."
+                  href="https://wa.me/6281992020296?text=Halo EcoOil, saya tertarik mendaftar sebagai Penyetor Teratur."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-2 w-full py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-lg transition-colors inline-block text-center cursor-pointer shadow-sm"

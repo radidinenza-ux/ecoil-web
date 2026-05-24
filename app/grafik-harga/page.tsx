@@ -14,18 +14,18 @@ export default function GrafikHargaPage() {
   const [activePoint, setActivePoint] = useState<number>(5); // Default to newest month
   const { gradePrices } = useApp();
 
-  const priceA = gradePrices.find(p => p.id === "A")?.price || 9500;
-  const priceB = gradePrices.find(p => p.id === "B")?.price || 8500;
-  const priceC = gradePrices.find(p => p.id === "C")?.price || 6500;
-
-  const historicalData: PricePoint[] = [
-    { id: 0, month: "Des", price: 8100 },
-    { id: 1, month: "Jan", price: 8300 },
-    { id: 2, month: "Feb", price: 8200 },
-    { id: 3, month: "Mar", price: 8600 },
-    { id: 4, month: "Apr", price: 8900 },
-    { id: 5, month: "Mei", price: priceB }, // Tied to dynamic Grade B price count
-  ];
+  const priceA = gradePrices.find(p => p.id === "A")?.price || 2500;
+  const priceB = gradePrices.find(p => p.id === "B")?.price || 2000;
+  const priceC = gradePrices.find(p => p.id === "C")?.price || 1500;
+const historicalData: PricePoint[] = [
+{ id: 1, month: "Mei", price: 2000 },
+  { id: 2, month: "Jun", price: 2055 },
+  { id: 3, month: "Jul", price: 2100 },
+  { id: 4, month: "Agu", price: 2000 },
+  { id: 5, month: "Sep", price: 2150 },
+  { id: 6, month: "Okt", price: 2250 }  
+];
+  
 
   const currentGradePrices = [
     {

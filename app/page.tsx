@@ -275,7 +275,7 @@ export default function Home() {
               <div>
                 <div className="relative h-64 w-full bg-orange-50/20 rounded-xl mb-5 flex items-center justify-center overflow-hidden border border-orange-100" id="candle-lavender-orange-img-wrapper">
                   <img 
-                    src="/lilin_orange.svg" 
+                    src="/lilin_orange.jpg" 
                     alt="Lilin Aromaterapi Lavender - Varian Orange" 
                     className="h-full w-full object-contain"
                     referrerPolicy="no-referrer"
@@ -313,7 +313,7 @@ export default function Home() {
               <div>
                 <div className="relative h-64 w-full bg-emerald-50/20 rounded-xl mb-5 flex items-center justify-center overflow-hidden border border-emerald-100" id="candle-lavender-green-img-wrapper">
                   <img 
-                    src="/lilin_hijau.svg" 
+                    src="/lilin_hijau.jpg" 
                     alt="Lilin Aromaterapi Lavender - Varian Hijau" 
                     className="h-full w-full object-contain"
                     referrerPolicy="no-referrer"

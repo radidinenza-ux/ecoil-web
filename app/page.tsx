@@ -270,22 +270,24 @@ export default function Home() {
           </div>
 
           <div className="grid sm:grid-cols-2 gap-8 max-w-3xl mx-auto" id="catalog-grid">
-            {/* Lavender Candle */}
-            <div className="bg-white rounded-2xl border border-zinc-200 p-6 shadow-md hover:shadow-lg transition-all flex flex-col justify-between" id="candle-lavender">
+            {/* Lavender Candle - Orange Variant */}
+            <div className="bg-white rounded-2xl border border-zinc-200 p-6 shadow-md hover:shadow-lg transition-all flex flex-col justify-between" id="candle-lavender-orange">
               <div>
-                <div className="relative h-44 w-full bg-purple-50/40 rounded-xl mb-5 flex items-center justify-center overflow-hidden border border-purple-100" id="candle-lavender-img-placeholder">
-                  <div className="absolute inset-0 bg-gradient-to-tr from-purple-100/30 via-transparent to-transparent"></div>
-                  <div className="text-center p-4">
-                    <Flame className="h-10 w-10 text-purple-500 mx-auto animate-pulse mb-2" />
-                    <span className="text-[10px] font-bold text-purple-700 uppercase tracking-wide bg-purple-50 border border-purple-100 px-2.5 py-0.5 rounded-full">Lavender Relaxation</span>
-                  </div>
+                <div className="relative h-64 w-full bg-orange-50/20 rounded-xl mb-5 flex items-center justify-center overflow-hidden border border-orange-100" id="candle-lavender-orange-img-wrapper">
+                  <img 
+                    src="/lilin_orange.svg" 
+                    alt="Lilin Aromaterapi Lavender - Varian Orange" 
+                    className="h-full w-full object-contain"
+                    referrerPolicy="no-referrer"
+                    id="img-lilin-orange"
+                  />
                 </div>
                 <div className="flex justify-between items-start gap-3 mb-2">
-                  <h3 className="font-extrabold text-zinc-900 text-base leading-tight">Lilin Aromaterapi Lavender Eco-Candle</h3>
-                  <span className="text-[10px] font-extrabold bg-zinc-100 text-zinc-700 border border-zinc-200 px-2 py-0.5 rounded whitespace-nowrap">60gr</span>
+                  <h3 className="font-extrabold text-zinc-900 text-base leading-tight">Lilin Aromaterapi Lavender (Varian Orange)</h3>
+                  <span className="text-[10px] font-extrabold bg-orange-50 text-orange-700 border border-orange-200 px-2 py-0.5 rounded whitespace-nowrap">Orange</span>
                 </div>
                 <p className="text-zinc-500 text-xs leading-relaxed mb-6">
-                  Memberikan efek relaksasi mendalam, merawat rasa tenang, dan menyembuhkan pikiran penat setelah seharian beraktivitas berat.
+                  Menghadirkan aroma terapi bunga Lavender yang menenangkan berpadu dengan kehangatan lilin orange estetis. Lengkap dengan dekorasi cangkang kerang spiral ungu yang cantik di atasnya.
                 </p>
               </div>
               <div>
@@ -294,34 +296,36 @@ export default function Home() {
                   <span className="text-xl font-black text-zinc-950 font-mono">Rp 27.000</span>
                 </div>
                 <a
-                  href="https://wa.me/6281992020296?text=Halo%20EcoOil,%20saya%20mau%20order%20Lilin%20Aromaterapi%20Lavender"
+                  href="https://wa.me/6281992020296?text=Halo%20EcoOil,%20saya%20mau%20order%20Lilin%20Aromaterapi%20Lavender%20Varian%20Orange"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full py-3 bg-zinc-950 hover:bg-zinc-800 text-white !text-white rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2 shadow-sm cursor-pointer"
-                  id="buy-lavender-wa"
+                  id="buy-lavender-orange-wa"
                 >
                   <MessageSquare className="h-4 w-4 text-emerald-400" />
-                  <span>Beli via WhatsApp (081992020296)</span>
+                  <span>Beli Varian Orange (081992020296)</span>
                 </a>
               </div>
             </div>
 
-            {/* Mint Candle */}
-            <div className="bg-white rounded-2xl border border-zinc-200 p-6 shadow-md hover:shadow-lg transition-all flex flex-col justify-between" id="candle-mint">
+            {/* Lavender Candle - Green Variant */}
+            <div className="bg-white rounded-2xl border border-zinc-200 p-6 shadow-md hover:shadow-lg transition-all flex flex-col justify-between" id="candle-lavender-green">
               <div>
-                <div className="relative h-44 w-full bg-emerald-50/30 rounded-xl mb-5 flex items-center justify-center overflow-hidden border border-emerald-100" id="candle-mint-img-placeholder">
-                  <div className="absolute inset-0 bg-gradient-to-tr from-emerald-100/30 via-transparent to-transparent"></div>
-                  <div className="text-center p-4">
-                    <Flame className="h-10 w-10 text-emerald-500 mx-auto animate-pulse mb-2" />
-                    <span className="text-[10px] font-bold text-emerald-700 uppercase tracking-wide bg-emerald-50 border border-emerald-100 px-2.5 py-0.5 rounded-full">Mint & Eucalyptus</span>
-                  </div>
+                <div className="relative h-64 w-full bg-emerald-50/20 rounded-xl mb-5 flex items-center justify-center overflow-hidden border border-emerald-100" id="candle-lavender-green-img-wrapper">
+                  <img 
+                    src="/lilin_hijau.svg" 
+                    alt="Lilin Aromaterapi Lavender - Varian Hijau" 
+                    className="h-full w-full object-contain"
+                    referrerPolicy="no-referrer"
+                    id="img-lilin-hijau"
+                  />
                 </div>
                 <div className="flex justify-between items-start gap-3 mb-2">
-                  <h3 className="font-extrabold text-zinc-900 text-base leading-tight">Lilin Aromaterapi Mint & Eucalyptus</h3>
-                  <span className="text-[10px] font-extrabold bg-zinc-100 text-zinc-700 border border-zinc-200 px-2 py-0.5 rounded whitespace-nowrap">60gr</span>
+                  <h3 className="font-extrabold text-zinc-900 text-base leading-tight">Lilin Aromaterapi Lavender (Varian Hijau)</h3>
+                  <span className="text-[10px] font-extrabold bg-emerald-50 text-emerald-700 border border-emerald-200 px-2 py-0.5 rounded whitespace-nowrap">Hijau</span>
                 </div>
                 <p className="text-zinc-500 text-xs leading-relaxed mb-6">
-                  Menyegarkan pernapasan ruang tamu, melegakan peredaran oksigen, sekaligus ampuh mengusir nyamuk secara ramah lingkungan.
+                  Kombinasi sempurna aroma lavender relaksasi dengan nuansa lilin hijau yang asri dan sejuk. Dihiasi ornamen bintang peach-orange elegan di atas permukaannya.
                 </p>
               </div>
               <div>
@@ -330,14 +334,14 @@ export default function Home() {
                   <span className="text-xl font-black text-zinc-950 font-mono">Rp 27.000</span>
                 </div>
                 <a
-                  href="https://wa.me/6281992020296?text=Halo%20EcoOil,%20saya%20mau%20order%20Lilin%20Aromaterapi%20Mint"
+                  href="https://wa.me/6281992020296?text=Halo%20EcoOil,%20saya%2520mau%20order%20Lilin%20Aromaterapi%20Lavender%20Varian%20Hijau"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full py-3 bg-zinc-950 hover:bg-zinc-800 text-white !text-white rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2 shadow-sm cursor-pointer"
-                  id="buy-mint-wa"
+                  id="buy-lavender-green-wa"
                 >
                   <MessageSquare className="h-4 w-4 text-emerald-400" />
-                  <span>Beli via WhatsApp (081992020296)</span>
+                  <span>Beli Varian Hijau (081992020296)</span>
                 </a>
               </div>
             </div>
@@ -438,11 +442,21 @@ export default function Home() {
                   </div>
                   <div className="flex items-center gap-3">
                     <Mail className="h-5 w-5 text-emerald-450 flex-none" />
-                    <span>partnership@ecooil.id</span>
+                    <a href="mailto:GreenEcoOil01@gmail.com" className="hover:underline hover:text-emerald-400 transition-colors" id="contact-email-link">
+                      GreenEcoOil01@gmail.com
+                    </a>
                   </div>
                   <div className="flex items-center gap-3">
                     <Phone className="h-5 w-5 text-emerald-450 flex-none" />
-                    <span>+62 811-2345-6789 (Jam Kerja Operational)</span>
+                    <a 
+                      href="https://wa.me/6281992020296?text=Halo%20EcoOil%20Layanan%20Pusat"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:underline hover:text-emerald-400 transition-colors"
+                      id="contact-phone-link"
+                    >
+                      0819-9202-0296 (Hubungi via WhatsApp)
+                    </a>
                   </div>
                 </div>
               </div>

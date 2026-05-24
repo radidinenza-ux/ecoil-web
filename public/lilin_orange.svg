@@ -1,0 +1,157 @@
+<svg xmlns="http://www.w3.org/2500/svg" viewBox="0 0 400 500" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fff4ef" />
+      <stop offset="100%" stop-color="#ffe3d5" />
+    </radialGradient>
+    
+    <!-- Ribbon Red Gradient -->
+    <linearGradient id="ribbonGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff3b30" />
+      <stop offset="50%" stop-color="#e01e12" />
+      <stop offset="100%" stop-color="#990f07" />
+    </linearGradient>
+
+    <!-- Orange Wax Gradient -->
+    <linearGradient id="waxGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ff7b39" />
+      <stop offset="60%" stop-color="#e65100" />
+      <stop offset="100%" stop-color="#bf360c" />
+    </linearGradient>
+
+    <!-- Glass Gradient -->
+    <linearGradient id="glassGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.7)" />
+      <stop offset="20%" stop-color="rgba(255,255,255,0.3)" />
+      <stop offset="50%" stop-color="rgba(240,245,255,0.15)" />
+      <stop offset="80%" stop-color="rgba(255,255,255,0.35)" />
+      <stop offset="100%" stop-color="rgba(255,255,255,0.6)" />
+    </linearGradient>
+
+    <!-- Shell Purple Gradient -->
+    <linearGradient id="shellGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7b1fa2" />
+      <stop offset="55%" stop-color="#ab47bc" />
+      <stop offset="100%" stop-color="#e1bee7" />
+    </linearGradient>
+
+    <!-- Silver Base Gradient -->
+    <linearGradient id="silverGrad" x1="0%" y1="0%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#e0e0e0" />
+      <stop offset="30%" stop-color="#ffffff" />
+      <stop offset="70%" stop-color="#bdbdbd" />
+      <stop offset="100%" stop-color="#757575" />
+    </linearGradient>
+
+    <!-- Box Highlight Gradient -->
+    <linearGradient id="boxEdge" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.6)" />
+      <stop offset="50%" stop-color="rgba(255,255,255,0.1)" />
+      <stop offset="100%" stop-color="rgba(255,255,255,0.4)" />
+    </linearGradient>
+    
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="6" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <!-- Canvas Background -->
+  <rect width="100%" height="100%" fill="url(#bgGrad)" rx="16" />
+
+  <!-- Silver Mirror Platform / Base -->
+  <polygon points="60,375 340,375 310,430 90,430" fill="url(#silverGrad)" stroke="#9e9e9e" stroke-width="1" />
+  <polygon points="60,375 90,430 90,435 60,380" fill="#757575" />
+  <polygon points="340,375 310,430 310,435 340,380" fill="#9e9e9e" />
+  <polygon points="90,430 310,430 310,435 90,435" fill="#424242" />
+
+  <!-- Shadow below Silver Platform -->
+  <ellipse cx="200" cy="440" rx="120" ry="10" fill="#000" opacity="0.12" />
+
+  <!-- Left Side Reflection of the platform -->
+  <polygon points="120,380 280,380 260,425 140,425" fill="#ffffff" opacity="0.3" filter="blur(2px)"/>
+
+  <!-- CLEAR GIFT BOX -->
+  <rect x="70" y="55" width="260" height="320" fill="rgba(255,255,255,0.06)" stroke="url(#boxEdge)" stroke-width="2" rx="4" />
+  <!-- Box Corner Reflections -->
+  <line x1="71" y1="56" x2="71" y2="374" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" />
+  <line x1="329" y1="56" x2="329" y2="374" stroke="rgba(255,255,255,0.3)" stroke-width="1.5" />
+  <line x1="71" y1="56" x2="329" y2="56" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" />
+
+  <!-- RED RIBBONS (BOX ACCENT) -->
+  <!-- Left Side Vertical Ribbon (Behind Glass) -->
+  <rect x="91" y="55" width="16" height="320" fill="url(#ribbonGrad)" opacity="0.8" />
+  <!-- Right Side Vertical Ribbon -->
+  <rect x="293" y="55" width="16" height="320" fill="url(#ribbonGrad)" opacity="0.8" />
+  
+  <!-- CANDLE IN GLASS -->
+  <g filter="url(#shadow)">
+    <!-- Glass Cup Outer Outline -->
+    <!-- Curved tumbler / shot glass container -->
+    <path d="M 130,220 L 140,350 C 141,365 155,370 200,370 C 245,370 259,365 260,350 L 270,220 Z" fill="url(#glassGrad)" stroke="rgba(255,255,255,0.6)" stroke-width="2" />
+    
+    <!-- Solid Glass Bottom (Thick Glass base) -->
+    <path d="M 140,320 L 142,348 C 143,358 153,365 200,365 C 247,365 257,358 258,348 L 260,320 C 255,335 240,345 200,345 C 160,345 145,335 140,320 Z" fill="rgba(240,245,255,0.4)" stroke="rgba(255,255,255,0.3)" />
+
+    <!-- Orange Wax Layer (Middle and Upper part of Glass) -->
+    <path d="M 132,240 L 138,315 C 142,328 165,332 200,332 C 235,332 258,328 262,315 L 268,240 C 265,248 245,252 200,252 C 155,252 135,248 132,240 Z" fill="url(#waxGrad)" />
+    
+    <!-- Wax surface ellipse -->
+    <ellipse cx="200" cy="240" rx="66" ry="12" fill="#ff8c52" stroke="#ffb18a" stroke-width="1.5" />
+    
+    <!-- Candle Wick -->
+    <line x1="200" y1="240" x2="200" y2="225" stroke="#4e342e" stroke-width="3" stroke-linecap="round" />
+    
+    <!-- CONFETTI & GLITTER ON THE WAX SURFACE -->
+    <!-- Gold/Yellow flower, star, and red heart glitters on surface -->
+    <polygon points="175,238 177,241 181,241 178,243 179,247 175,245 171,247 172,243 169,241 173,241" fill="#ffd54f" opacity="0.9" transform="rotate(15 175 238) scale(0.8)"/>
+    <polygon points="225,243 227,246 231,246 228,248 229,252 225,250 221,252 222,248 219,246 223,246" fill="#4fc3f7" opacity="0.8" transform="rotate(-10 225 243) scale(0.6)"/>
+    <!-- Heart confetti -->
+    <path d="M 152 242 C 150 239, 145 239, 145 242 C 145 244, 152 248, 152 248 C 152 248, 159 244, 159 242 C 159 239, 154 239, 152 242 Z" fill="#ff4081" opacity="0.85" transform="rotate(35 152 242) scale(0.5)" />
+    <path d="M 190 245 C 188 242, 183 242, 183 245 C 183 247, 190 251, 190 251 C 190 251, 197 247, 197 245 C 197 242, 192 242, 190 245 Z" fill="#e040fb" opacity="0.85" transform="rotate(-15 190 245) scale(0.5)" />
+
+    <!-- PURPLE SHELL ORNAMENT (Sticking up from Wax) -->
+    <!-- Unicorn horn / spiral shell shaped sculpture in purple tones -->
+    <g transform="translate(235, 125) scale(0.9)">
+      <path d="M 15,110 C 25,110 30,100 28,95 H 2 L 15,110 Z" fill="#4a148c" />
+      <path d="M 3,95 C 10,95 24,93 25,85 C 26,75 5,75 5,85 L 3,95 Z" fill="#6a1b9a" />
+      <path d="M 5,82 C 12,82 23,80 23,72 C 23,65 6,65 7,72 L 5,82 Z" fill="#7b1fa2" />
+      <path d="M 7,69 C 14,69 22,67 21,60 C 20,53 8,53 9,60 L 7,69 Z" fill="#8e24aa" />
+      <path d="M 9,57 C 14,57 20,55 19,49 C 18,43 10,43 11,49 L 9,57 Z" fill="#ab47bc" />
+      <path d="M 11,46 C 15,46 19,44 17,39 C 15,34 11,34 12,39 L 11,46 Z" fill="#ba68c8" />
+      <path d="M 12,36 L 14,25 L 16,36 Z" fill="#e1bee7" />
+    </g>
+
+    <!-- Glass Highlights / Rim -->
+    <ellipse cx="200" cy="220" rx="70" ry="12" fill="none" stroke="rgba(255,255,255,0.75)" stroke-width="2" />
+    <ellipse cx="200" cy="220" rx="69" ry="11" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1" />
+    <!-- Reflection Sparkle stripes on Glass -->
+    <path d="M 141,230 Q 148,280 152,340" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="3" stroke-linecap="round" opacity="0.7" />
+    <path d="M 259,235 Q 254,285 249,335" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="2" stroke-linecap="round" />
+  </g>
+
+  <!-- RED BOW RIBBON ON TOP OF THE CLEAR GIFT BOX -->
+  <g transform="translate(200, 52)">
+    <!-- Main Center Knot -->
+    <rect x="-10" y="-10" width="20" height="20" fill="url(#ribbonGrad)" rx="3" stroke="#7f0a04" stroke-width="1" />
+    <!-- Ribbon Loops Left -->
+    <path d="M -9,0 C -35,-35 -55,-10 -10,6 Z" fill="url(#ribbonGrad)" stroke="#7f0a04" stroke-width="1.5" />
+    <path d="M -15,-5 C -30,-22 -40,0 -12,3 Z" fill="#ff6b62" opacity="0.6" />
+    <!-- Ribbon Loops Right -->
+    <path d="M 9,0 C 35,-35 55,-10 10,6 Z" fill="url(#ribbonGrad)" stroke="#7f0a04" stroke-width="1.5" />
+    <path d="M 15,-5 C 30,-22 40,0 12,3 Z" fill="#ff6b62" opacity="0.6" />
+    <!-- Hanging Ribbon Tails -->
+    <path d="M -5,8 Q -25,35 -15,50 M -7,8 L -15,50 L -25,44 Q -30,30 -5,8" fill="url(#ribbonGrad)" stroke="#7f0a04" stroke-width="1" />
+    <path d="M 5,8 Q 25,35 15,50 M 7,8 L 15,50 L 25,44 Q 30,30 5,8" fill="url(#ribbonGrad)" stroke="#7f0a04" stroke-width="1" />
+  </g>
+
+  <!-- Front Box Ribbon Overlay -->
+  <rect x="293" y="56" width="16" height="318" fill="url(#ribbonGrad)" stroke="#7f0a04" stroke-width="0.5" opacity="0.9" />
+
+  <!-- Elegant Product Name Badge label within Box -->
+  <g transform="translate(200, 345)">
+    <rect x="-65" y="-12" width="130" height="24" fill="#ffffff" rx="12" filter="url(#shadow)" stroke="#ffab91" stroke-width="1" />
+    <text x="0" y="4" font-family="'Inter', sans-serif" font-size="10" font-weight="bold" fill="#bf360c" text-anchor="middle">LAVENDER - ORANGE</text>
+  </g>
+
+</svg>

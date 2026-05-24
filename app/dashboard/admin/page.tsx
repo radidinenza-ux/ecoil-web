@@ -356,7 +356,7 @@ export default function AdminDashboardPage() {
                   <th className="pb-3 pl-2 text-right">Status</th>
                 </tr>
               </thead>
-             <tbody className="divide-y divide-zinc-100 text-xs text-zinc-700">
+           <tbody className="divide-y divide-zinc-100 text-xs text-zinc-700">
                     {/* Baris 1: Data Contoh yang Sudah Sukses */}
                     <tr className="hover:bg-zinc-50/50 transition-colors">
                       <td className="py-3.5 px-4 font-mono text-zinc-500">2026-05-24</td>
@@ -408,8 +408,7 @@ export default function AdminDashboardPage() {
                         </tr>
                       );
                     })()}
-                  </tbody>
-
+                  </tbody> 
       </div>
     </main>
   );

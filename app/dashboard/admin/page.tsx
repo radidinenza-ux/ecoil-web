@@ -357,35 +357,35 @@ export default function AdminDashboardPage() {
                 </tr>
               </thead>
          <tbody className="divide-y divide-zinc-100 text-xs text-zinc-700">
-                    {/* Baris 1: Contoh Selesai */}
-                    <tr className="hover:bg-zinc-50/50 transition-colors">
-                      <td className="py-3.5 px-4 font-medium text-zinc-900">user@ecoil.id</td>
-                      <td className="py-3.5 px-4 font-mono text-zinc-500">2026-05-24</td>
-                      <td className="py-3.5 px-4 font-mono">Grade B</td>
-                      <td className="py-3.5 px-4 font-mono font-semibold">5 L</td>
-                      <td className="py-3.5 px-4 font-mono font-bold text-emerald-700">Rp 10.000</td>
-                      <td className="py-3.5 px-4 text-right"><span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 font-extrabold border border-emerald-200">✓ Selesai</span></td>
-                    </tr>
-                    
-                    {/* Baris 2: Demo ACC */}
-                    {(() => {
-                      const [status, setStatus] = React.useState("Menunggu Penjemputan");
-                      return (
-                        <tr className="hover:bg-zinc-50/50 transition-colors">
-                          <td className="py-3.5 px-4 font-medium text-zinc-900">user@ecoil.id</td>
-                          <td className="py-3.5 px-4 font-mono text-zinc-500">2026-05-24</td>
-                          <td className="py-3.5 px-4 font-mono">Grade B</td>
-                          <td className="py-3.5 px-4 font-mono font-semibold">5 L</td>
-                          <td className="py-3.5 px-4 font-mono font-bold text-emerald-700">Rp 10.000</td>
-                          <td className="py-3.5 px-4 text-right flex items-center justify-end gap-2">
-                            {status === "Menunggu Penjemputan" ? (
-                              <button onClick={() => setStatus("Selesai")} className="px-2 py-1 bg-zinc-900 text-white rounded font-bold text-[10px] cursor-pointer">ACC</button>
-                            ) : <span className="text-emerald-700 font-bold">✓ Selesai</span>}
-                          </td>
-                        </tr>
-                      );
-                    })()}
-                  </tbody>
+  {/* Data 1: Contoh Selesai */}
+  <tr className="hover:bg-zinc-50/50 transition-colors">
+    <td className="py-3.5 px-4 font-medium text-zinc-900">user@ecoil.id</td>
+    <td className="py-3.5 px-4 font-mono text-zinc-500">2026-05-24</td>
+    <td className="py-3.5 px-4 font-mono">Grade B</td>
+    <td className="py-3.5 px-4 font-mono font-semibold">5 L</td>
+    <td className="py-3.5 px-4 font-mono font-bold text-emerald-700">Rp 10.000</td>
+    <td className="py-3.5 px-4 text-right"><span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 font-extrabold border border-emerald-200">✓ Selesai</span></td>
+  </tr>
+  
+  {/* Data 2: Demo ACC */}
+  {(() => {
+    const [status, setStatus] = React.useState("Menunggu Penjemputan");
+    return (
+      <tr className="hover:bg-zinc-50/50 transition-colors">
+        <td className="py-3.5 px-4 font-medium text-zinc-900">user@ecoil.id</td>
+        <td className="py-3.5 px-4 font-mono text-zinc-500">2026-05-24</td>
+        <td className="py-3.5 px-4 font-mono">Grade B</td>
+        <td className="py-3.5 px-4 font-mono font-semibold">5 L</td>
+        <td className="py-3.5 px-4 font-mono font-bold text-emerald-700">Rp 10.000</td>
+        <td className="py-3.5 px-4 text-right flex items-center justify-end gap-2">
+          {status === "Menunggu Penjemputan" ? (
+            <button onClick={() => setStatus("Selesai")} className="px-3 py-1 bg-zinc-900 text-white rounded font-bold text-[10px] cursor-pointer hover:bg-zinc-700">ACC</button>
+          ) : <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 font-extrabold border border-emerald-200">✓ Selesai</span>}
+        </td>
+      </tr>
+    );
+  })()}
+</tbody>
       </div>
     </main>
   );

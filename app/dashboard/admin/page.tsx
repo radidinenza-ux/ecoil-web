@@ -356,54 +356,31 @@ export default function AdminDashboardPage() {
                   <th className="pb-3 pl-2 text-right">Status</th>
                 </tr>
               </thead>
-          <tbody className="divide-y divide-zinc-100 text-xs text-zinc-700">
-                    {/* Baris 1: Data Contoh yang Sudah Sukses */}
+         <tbody className="divide-y divide-zinc-100 text-xs text-zinc-700">
+                    {/* Baris 1: Contoh Selesai */}
                     <tr className="hover:bg-zinc-50/50 transition-colors">
-                      <td className="py-3.5 px-4 font-mono text-zinc-500">2026-05-24</td>
                       <td className="py-3.5 px-4 font-medium text-zinc-900">user@ecoil.id</td>
+                      <td className="py-3.5 px-4 font-mono text-zinc-500">2026-05-24</td>
+                      <td className="py-3.5 px-4 font-mono">Grade B</td>
                       <td className="py-3.5 px-4 font-mono font-semibold">5 L</td>
-                      <td className="py-3.5 px-4">
-                        <span className="px-2 py-0.5 rounded bg-blue-50 text-blue-700 font-bold border border-blue-100">Grade B</span>
-                      </td>
                       <td className="py-3.5 px-4 font-mono font-bold text-emerald-700">Rp 10.000</td>
-                      <td className="py-3.5 px-4 text-right">
-                        <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 font-extrabold border border-emerald-200">
-                          ✓ Selesai
-                        </span>
-                      </td>
+                      <td className="py-3.5 px-4 text-right"><span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 font-extrabold border border-emerald-200">✓ Selesai</span></td>
                     </tr>
-
-                    {/* Baris 2: Data Interaktif dengan Tombol ACC untuk Demo */}
+                    
+                    {/* Baris 2: Demo ACC */}
                     {(() => {
-                      const [statusData, setStatusData] = React.useState("Menunggu Penjemputan");
+                      const [status, setStatus] = React.useState("Menunggu Penjemputan");
                       return (
                         <tr className="hover:bg-zinc-50/50 transition-colors">
+                          <td className="py-3.5 px-4 font-medium text-zinc-900">user@ecoil.id</td>
                           <td className="py-3.5 px-4 font-mono text-zinc-500">2026-05-24</td>
-                          <td className="py-3.5 px-4 font-medium text-zinc-900">user@ecooil.id</td>
+                          <td className="py-3.5 px-4 font-mono">Grade B</td>
                           <td className="py-3.5 px-4 font-mono font-semibold">5 L</td>
-                          <td className="py-3.5 px-4">
-                            <span className="px-2 py-0.5 rounded bg-blue-50 text-blue-750 font-bold border border-blue-100">Grade B</span>
-                          </td>
                           <td className="py-3.5 px-4 font-mono font-bold text-emerald-700">Rp 10.000</td>
                           <td className="py-3.5 px-4 text-right flex items-center justify-end gap-2">
-                            {statusData === "Menunggu Penjemputan" ? (
-                              <>
-                                <span className="inline-flex items-center px-2.5 py-0.5 rounded-full bg-amber-50 text-amber-800 font-extrabold border border-amber-200">
-                                  Menunggu Penjemputan
-                                </span>
-                                <button 
-                                  type="button"
-                                  onClick={() => setStatusData("Selesai")} 
-                                  className="px-2 py-1 bg-zinc-900 hover:bg-zinc-800 text-white rounded font-bold text-[10px] transition-colors cursor-pointer"
-                                >
-                                  ACC
-                                </button>
-                              </>
-                            ) : (
-                              <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 font-extrabold border border-emerald-200 animate-fade-in">
-                                ✓ Selesai
-                              </span>
-                            )}
+                            {status === "Menunggu Penjemputan" ? (
+                              <button onClick={() => setStatus("Selesai")} className="px-2 py-1 bg-zinc-900 text-white rounded font-bold text-[10px] cursor-pointer">ACC</button>
+                            ) : <span className="text-emerald-700 font-bold">✓ Selesai</span>}
                           </td>
                         </tr>
                       );

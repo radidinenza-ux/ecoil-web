@@ -357,39 +357,43 @@ export default function AdminDashboardPage() {
                 </tr>
               </thead>
               <tbody className="divide-y divide-zinc-50 text-xs text-zinc-600">
-                {deposits.map((d) => (
-                  <tr key={d.id} className="hover:bg-zinc-50/40">
-                    <td className="py-3 pr-2 font-bold text-zinc-900 max-w-[180px] truncate" title={d.email}>
-                      {d.email}
-                    </td>
-                    <td className="py-3 px-2 font-mono">{d.date}</td>
-                    <td className="py-3 px-2">
-                      <span className={`px-2 py-0.5 font-bold rounded-full ${
-                        d.grade === "A" ? "bg-emerald-50 text-emerald-700 border border-emerald-100" :
-                        d.grade === "B" ? "bg-blue-50 text-blue-700 border border-blue-100" :
-                        "bg-amber-50 text-amber-700 border border-amber-100"
-                      }`}>
-                        Grade {d.grade}
-                      </span>
-                    </td>
-                    <td className="py-3 px-2 font-bold font-mono text-zinc-800">{d.liters} L</td>
-                    <td className="py-3 px-2 text-right font-bold text-emerald-700 font-mono">
-                      Rp {d.totalEarnings.toLocaleString("id-ID")}
-                    </td>
-                    <td className="py-3 pl-2 text-right">
-                      <span className={`px-2.5 py-1 rounded-full text-[10px] font-black ${
-                        d.status === "Selesai" 
-                          ? "bg-emerald-100 text-emerald-800"
-                          : d.status === "Dijadwalkan"
-                          ? "bg-blue-100 text-blue-800 animate-pulse"
-                          : "bg-zinc-100 text-zinc-600"
-                      }`}>
-                        {d.status}
-                      </span>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
+                    <tr className="hover:bg-zinc-50/40">
+                      <td className="py-3 pr-2 font-bold text-zinc-900 max-w-[180px] truncate" title="user@ecooil.id">
+                        user@ecooil.id
+                      </td>
+                      <td className="py-3 px-2 font-mono">2026-05-24</td>
+                      <td className="py-3 px-2">
+                        <span className="px-2 py-0.5 font-bold rounded-full bg-blue-50 text-blue-750 border border-blue-100">
+                          Grade B
+                        </span>
+                      </td>
+                      <td className="py-3 px-2 font-bold font-mono text-zinc-800">5 L</td>
+                      <td className="py-3 px-2 text-right font-bold text-emerald-700 font-mono">Rp 10.000</td>
+                      <td className="py-3 pl-2 text-right">
+                        <span className="px-2.5 py-1 rounded-full text-[10px] font-black bg-emerald-50 text-emerald-700 border border-emerald-200">
+                          ✓ Selesai
+                        </span>
+                      </td>
+                    </tr>
+                    <tr className="hover:bg-zinc-50/40">
+                      <td className="py-3 pr-2 font-bold text-zinc-900 max-w-[180px] truncate" title="user@ecooil.id">
+                        user@ecooil.id
+                      </td>
+                      <td className="py-3 px-2 font-mono">2026-05-18</td>
+                      <td className="py-3 px-2">
+                        <span className="px-2 py-0.5 font-bold rounded-full bg-blue-50 text-blue-750 border border-blue-100">
+                          Grade B
+                        </span>
+                      </td>
+                      <td className="py-3 px-2 font-bold font-mono text-zinc-800">5 L</td>
+                      <td className="py-3 px-2 text-right font-bold text-emerald-700 font-mono">Rp 10.000</td>
+                      <td className="py-3 pl-2 text-right">
+                        <span className="px-2.5 py-1 rounded-full text-[10px] font-black bg-emerald-50 text-emerald-700 border border-emerald-200">
+                          ✓ Selesai
+                        </span>
+                      </td>
+                    </tr>
+                  </tbody>
             </table>
           </div>
         </section>

@@ -1,0 +1,12 @@
+{
+  "name": "Remix: EcoOil - Pengumpulan Minyak Jelantah",
+  "description": "Sistem profil perusahaan dan manajemen pengumpulan minyak jelantah terpadu.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone",
+    "geolocation"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

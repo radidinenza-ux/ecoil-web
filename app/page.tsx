@@ -1,0 +1,473 @@
+'use client';
+
+import React, { useState } from "react";
+import { 
+  Droplet, 
+  ArrowRight, 
+  CheckCircle, 
+  Leaf, 
+  Award, 
+  Calculator, 
+  TrendingUp, 
+  MessageSquare, 
+  Flame,
+  Truck,
+  MapPin,
+  CheckCircle2,
+  Clock,
+  ShieldCheck,
+  Users,
+  Milestone,
+  Mail,
+  Phone,
+  Scale
+} from "lucide-react";
+import NextLink from "next/link";
+import { useApp } from "@/components/context";
+
+export default function Home() {
+  const [liters, setLiters] = useState<number>(15);
+  const [incentiveType, setIncentiveType] = useState<"CASH" | "POINTS">("CASH");
+  const { gradePrices } = useApp();
+
+  // Calculation parameters from revision instructions
+  const pricePerLiterCash = 2000; // Rp 2.000 / Liter standard cash rate
+  const pointsPerLiter = 4;        // 4 Poin / Liter standard loyalty rate
+
+  const calculatedCash = liters * pricePerLiterCash;
+  const calculatedPoints = liters * pointsPerLiter;
+
+  const cleanWaterSaved = liters * 1000000; // Environmental conversion metrics
+  const co2Reduced = (liters * 2.5).toFixed(1);
+
+  return (
+    <main className="flex-1 bg-zinc-50 py-12 px-6" id="home-page">
+      <div className="mx-auto max-w-5xl" id="home-container">
+        
+        {/* ================= HERO SECTION ================= */}
+        <section className="text-center mb-16" id="hero-section">
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-emerald-50 text-emerald-850 text-xs font-bold mb-6 border border-emerald-100 animate-pulse" id="hero-badge">
+            <Leaf className="h-3.5 w-3.5 text-emerald-600" id="hero-badge-icon" />
+            <span>EcoOil: Selamatkan Lingkungan, Raih Keuntungan</span>
+          </div>
+          
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-zinc-950 tracking-tight max-w-4xl mx-auto mb-6 leading-none" id="hero-title">
+            Jangan Buang, <span className="text-emerald-600">Ubah Jadi Cuan</span>.<br className="hidden sm:inline" /> Mengubah Limbah Menjadi Nilai.
+          </h1>
+          
+          <p className="text-base sm:text-lg text-zinc-650 max-w-2xl mx-auto mb-8 leading-relaxed" id="hero-description">
+            EcoOil adalah pelopor sistem pengumpulan minyak jelantah saringan dari masyarakat dan pelaku kuliner. Kami mengolah kembali limbah cair dapur Anda menjadi lilin aromaterapi ramah lingkungan dan sumber biodiesel berkelanjutan.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4" id="hero-ctas">
+            <NextLink
+              href="/grafik-harga"
+              className="w-full sm:w-auto px-6 py-3.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl font-bold shadow-lg shadow-emerald-600/15 transition-all flex items-center justify-center gap-2 text-base cursor-pointer"
+              id="cta-price-chart"
+            >
+              <span>Lihat Grafik Harga</span>
+              <TrendingUp className="h-4 w-4" id="cta-price-chart-icon" />
+            </NextLink>
+            <a
+              href="#tentang-kami-section"
+              className="w-full sm:w-auto px-6 py-3.5 bg-white hover:bg-zinc-50 text-zinc-700 border border-zinc-200 rounded-xl font-bold transition-all flex items-center justify-center gap-2 text-base cursor-pointer"
+              id="cta-company-profile"
+            >
+              <span>Tentang Kami</span>
+              <ArrowRight className="h-4 w-4" id="cta-company-profile-icon" />
+            </a>
+          </div>
+        </section>
+
+        {/* ================= ALUR JUAL MINYAK & PENERIMAAN ================= */}
+        <section className="bg-white rounded-2xl border border-zinc-200/85 p-8 mb-16 shadow-sm" id="alur-jual-section">
+          <div className="text-center mb-8" id="alur-header">
+            <span className="text-xs font-black uppercase text-emerald-700 tracking-wider bg-emerald-50 px-3 py-1 rounded-md border border-emerald-100 inline-block mb-3">PANDUAN SETOR</span>
+            <h2 className="text-2xl font-black text-zinc-900 tracking-tight">Cara Mudah Menjual Minyak Jelantah Anda</h2>
+            <p className="text-xs text-zinc-500 max-w-md mx-auto mt-1">Sederhana dan menguntungkan. Selesaikan seluruh alur penimbangan hanya dari rumah Anda.</p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6" id="alur-steps-grid">
+            <div className="relative p-5 rounded-xl bg-zinc-50 border border-zinc-100 flex flex-col items-center text-center" id="step-1">
+              <div className="w-10 h-10 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center font-black text-sm mb-4">1</div>
+              <h3 className="font-bold text-zinc-950 text-sm mb-1">Kumpulkan</h3>
+              <p className="text-xs text-zinc-500 leading-relaxed">
+                Tiriskan dan saring kotoran kasar sisa memasak. Masukkan ke botol atau wadah bersih tertutup.
+              </p>
+            </div>
+
+            <div className="relative p-5 rounded-xl bg-zinc-50 border border-zinc-100 flex flex-col items-center text-center" id="step-2">
+              <div className="w-10 h-10 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center font-black text-sm mb-4">2</div>
+              <h3 className="font-bold text-zinc-950 text-sm mb-1">Request via WA</h3>
+              <p className="text-xs text-zinc-500 leading-relaxed">
+                Hubungi Admin kami via WA untuk mengajukan penjemputan gratis atau daftar lokasi drop point terdekat.
+              </p>
+            </div>
+
+            <div className="relative p-5 rounded-xl bg-zinc-50 border border-zinc-100 flex flex-col items-center text-center" id="step-3">
+              <div className="w-10 h-10 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center font-black text-sm mb-4">3</div>
+              <h3 className="font-bold text-zinc-950 text-sm mb-1">Timbang di Tempat</h3>
+              <p className="text-xs text-zinc-500 leading-relaxed">
+                Kurir EcoOil lapangan datang membawa timbangan digital akurat untuk mengukur volume jelantah di lokasi Anda.
+              </p>
+            </div>
+
+            <div className="relative p-5 rounded-xl bg-zinc-50 border border-zinc-100 flex flex-col items-center text-center" id="step-4">
+              <div className="w-10 h-10 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center font-black text-sm mb-4">4</div>
+              <h3 className="font-bold text-zinc-950 text-sm mb-1">Terima Uang/Poin</h3>
+              <p className="text-xs text-zinc-500 leading-relaxed">
+                Terima uang tunai instan (Rp 2.000/L) atau konversikan menjadi poin tabungan (4 Poin/L).
+              </p>
+            </div>
+          </div>
+
+          {/* Jaminan Poin Terkecuali */}
+          <div className="mt-8 p-4 bg-emerald-50/50 border border-emerald-250/60 rounded-xl text-center" id="alur-alert">
+            <span className="inline-flex h-2 w-2 rounded-full bg-emerald-500 mr-2 animate-ping" />
+            <span className="text-xs md:text-sm text-emerald-900 font-extrabold leading-relaxed">
+              PENEGASAN KHUSUS: EcoOil menerima SEMUA jenis minyak jelantah sisa penggorengan apa pun tanpa terkecuali!
+            </span>
+          </div>
+        </section>
+
+        {/* ================= INTERAKTIF KALKULATOR BARU ================= */}
+        <section className="bg-white rounded-2xl border border-zinc-200 p-8 mb-16 shadow-md" id="calculator-section">
+          <div className="grid md:grid-cols-12 gap-8 items-center" id="calculator-grid">
+            <div className="md:col-span-5" id="calc-input-block">
+              <div className="flex items-center gap-2 mb-3" id="calc-header">
+                <div className="p-2 bg-emerald-50 rounded-lg text-emerald-600" id="calc-icon-box">
+                  <Calculator className="h-5 w-5" id="calc-icon" />
+                </div>
+                <h3 className="text-lg font-black text-zinc-900" id="calc-title">Simulasi Poin & Penghasilan</h3>
+              </div>
+              <p className="text-zinc-500 text-xs mb-6 leading-relaxed" id="calc-description">
+                Gunakan simulator di bawah untuk menentukan jumlah minyak jelantah Anda dan pilih rincian imbal hasil yang Anda inginkan.
+              </p>
+
+              {/* Slider Input */}
+              <div className="space-y-4 mb-6" id="calc-control-group">
+                <div className="flex justify-between items-center">
+                  <span className="text-xs font-bold text-zinc-700 uppercase tracking-wide">Volume Taksiran:</span>
+                  <span className="text-emerald-700 text-base font-black bg-emerald-50 px-3 py-1 rounded-md border border-emerald-100 font-mono">
+                    {liters} Liter
+                  </span>
+                </div>
+                <input
+                  id="liters-range"
+                  type="range"
+                  min="1"
+                  max="100"
+                  value={liters}
+                  onChange={(e) => setLiters(Number(e.target.value))}
+                  className="w-full h-1.5 bg-zinc-100 rounded-lg appearance-none cursor-pointer accent-emerald-600"
+                />
+                <div className="flex justify-between text-[10px] text-zinc-400 font-mono" id="calc-range-labels font-semibold">
+                  <span>1 L</span>
+                  <span>50 L</span>
+                  <span>100 L</span>
+                </div>
+              </div>
+
+              {/* Incentive Choice Toggle */}
+              <div>
+                <label className="block text-[11px] font-black text-zinc-400 uppercase tracking-wider mb-2">Metode Imbal Hasil Pilihan:</label>
+                <div className="grid grid-cols-2 gap-2" id="toggle-incentive">
+                  <button
+                    type="button"
+                    onClick={() => setIncentiveType("CASH")}
+                    className={`py-2 px-3 text-xs font-extrabold rounded-xl border transition-all cursor-pointer ${
+                      incentiveType === "CASH"
+                        ? "bg-zinc-950 border-zinc-950 text-white"
+                        : "bg-zinc-50 border-zinc-200 text-zinc-650 hover:bg-zinc-100"
+                    }`}
+                  >
+                    Uang Tunai (Rp 2.000)
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setIncentiveType("POINTS")}
+                    className={`py-2 px-3 text-xs font-extrabold rounded-xl border transition-all cursor-pointer ${
+                      incentiveType === "POINTS"
+                        ? "bg-emerald-600 border-emerald-600 text-white"
+                        : "bg-zinc-50 border-zinc-200 text-zinc-650 hover:bg-zinc-100"
+                    }`}
+                  >
+                    Koin Poin (4 Poin)
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div className="md:col-span-7 bg-zinc-50 rounded-xl p-6 border border-zinc-100 grid sm:grid-cols-2 gap-4" id="calc-results-block">
+              <div className="bg-white p-5 rounded-lg border border-zinc-150 shadow-sm flex flex-col justify-between" id="earning-card">
+                <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-wider" id="earning-tag">Simulasi Hasil Pendapatan</span>
+                {incentiveType === "CASH" ? (
+                  <div>
+                    <span className="text-2xl font-black text-emerald-700 my-1 block font-mono">
+                      Rp {calculatedCash.toLocaleString("id-ID")}
+                    </span>
+                    <span className="text-[10px] text-zinc-400 mt-1 block font-mono">Ditetapkan dengan kurs Rp 2.000/Liter</span>
+                  </div>
+                ) : (
+                  <div>
+                    <span className="text-2xl font-black text-emerald-600 my-1 block font-mono">
+                      {calculatedPoints} Poin
+                    </span>
+                    <span className="text-[10px] text-zinc-400 mt-1 block font-mono">Ditetapkan dengan kurs 4 Poin/Liter</span>
+                  </div>
+                )}
+                <span className="text-[10px] text-zinc-500 font-medium">Pembayaran langsung diproses di lapangan!</span>
+              </div>
+
+              <div className="bg-white p-5 rounded-lg border border-zinc-150 shadow-sm flex flex-col justify-between" id="well-water-card">
+                <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-wider" id="water-tag">Air Bersih Diselamatkan</span>
+                <span className="text-2xl font-black text-blue-600 my-1 block font-mono">
+                  {cleanWaterSaved.toLocaleString("id-ID")} L
+                </span>
+                <span className="text-[10px] text-zinc-400 mt-1 block font-mono">1 Liter pelindung 1 juta liter air tanah</span>
+                <span className="text-[10px] text-zinc-500 font-medium">Mencegah kerusakan mata air alami lokal</span>
+              </div>
+
+              <div className="bg-white p-5 rounded-lg border border-zinc-150 shadow-sm flex flex-col justify-between sm:col-span-2" id="co2-card">
+                <div className="flex justify-between items-center" id="co2-row">
+                  <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-wider">Reduksi Karbon Kumulatif (CO₂)</span>
+                  <Award className="h-4 w-4 text-emerald-500" id="award-icon" />
+                </div>
+                <span className="text-2xl font-black text-zinc-900 my-1 block font-mono">
+                  {co2Reduced} kg CO₂
+                </span>
+                <span className="text-[10px] text-zinc-500 font-medium leading-relaxed" id="co2-note">
+                  Sempurna! Kontribusi ini setara dengan proses fotosintesis alami tahunan selama 12 bulan oleh {Math.ceil(liters * 0.25)} pohon dewasa.
+                </span>
+              </div>
+
+              {/* Promo Banner Point */}
+              <div className="bg-gradient-to-r from-emerald-600 to-teal-700 text-white p-4 rounded-lg sm:col-span-2 shadow-sm border border-emerald-500" id="free-candle-banner">
+                <div className="flex gap-3 items-center">
+                  <Flame className="h-8 w-8 text-amber-300 animate-pulse flex-none" />
+                  <div>
+                    <h4 className="text-xs font-extrabold uppercase tracking-widest text-amber-200">PROMO PENUKARAN BONUS</h4>
+                    <p className="text-xs font-semibold leading-relaxed mt-0.5">
+                      Ketika poin mencapai <span className="font-extrabold text-amber-300 underline font-mono">50 Poin</span>, dapat ditukarkan dengan <span className="font-extrabold text-white">1 buah Lilin Aromaterapi gratis!</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ================= PRODUK HILIRISASI UPDATE ================= */}
+        <section className="mb-16 border-t border-zinc-200 pt-16 animate-fade-in" id="product-catalog-section">
+          <div className="text-center mb-12" id="catalog-header-block">
+            <span className="text-xs uppercase font-extrabold text-emerald-700 tracking-widest bg-emerald-50 px-2.5 py-1 rounded-md border border-emerald-100" id="catalog-subtitle">UPCYCLING PRODUCTS</span>
+            <h2 className="text-3xl font-black text-zinc-900 tracking-tight mt-3 text-center" id="catalog-title">
+              Katalog Produk Olahan <span className="text-emerald-600">EcoOil</span>
+            </h2>
+            <p className="text-zinc-500 text-xs max-w-xl mx-auto mt-2 text-center leading-relaxed" id="catalog-description">
+              Rasakan kehangatan lilin aromaterapi yang dihasilkan secara steril melalui penjernihan limbah dapur rumah tangga menjadi produk bernilai estetika premium.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 gap-8 max-w-3xl mx-auto" id="catalog-grid">
+            {/* Lavender Candle */}
+            <div className="bg-white rounded-2xl border border-zinc-200 p-6 shadow-md hover:shadow-lg transition-all flex flex-col justify-between" id="candle-lavender">
+              <div>
+                <div className="relative h-44 w-full bg-purple-50/40 rounded-xl mb-5 flex items-center justify-center overflow-hidden border border-purple-100" id="candle-lavender-img-placeholder">
+                  <div className="absolute inset-0 bg-gradient-to-tr from-purple-100/30 via-transparent to-transparent"></div>
+                  <div className="text-center p-4">
+                    <Flame className="h-10 w-10 text-purple-500 mx-auto animate-pulse mb-2" />
+                    <span className="text-[10px] font-bold text-purple-700 uppercase tracking-wide bg-purple-50 border border-purple-100 px-2.5 py-0.5 rounded-full">Lavender Relaxation</span>
+                  </div>
+                </div>
+                <div className="flex justify-between items-start gap-3 mb-2">
+                  <h3 className="font-extrabold text-zinc-900 text-base leading-tight">Lilin Aromaterapi Lavender Eco-Candle</h3>
+                  <span className="text-[10px] font-extrabold bg-zinc-100 text-zinc-700 border border-zinc-200 px-2 py-0.5 rounded whitespace-nowrap">60gr</span>
+                </div>
+                <p className="text-zinc-500 text-xs leading-relaxed mb-6">
+                  Memberikan efek relaksasi mendalam, merawat rasa tenang, dan menyembuhkan pikiran penat setelah seharian beraktivitas berat.
+                </p>
+              </div>
+              <div>
+                <div className="flex items-center justify-between border-t border-zinc-100 pt-4 mb-4">
+                  <span className="text-zinc-400 text-xs">Harga Jual</span>
+                  <span className="text-xl font-black text-zinc-950 font-mono">Rp 27.000</span>
+                </div>
+                <a
+                  href="https://wa.me/6281992020296?text=Halo%20EcoOil,%20saya%20mau%20order%20Lilin%20Aromaterapi%20Lavender"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full py-3 bg-zinc-950 hover:bg-zinc-800 text-white !text-white rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2 shadow-sm cursor-pointer"
+                  id="buy-lavender-wa"
+                >
+                  <MessageSquare className="h-4 w-4 text-emerald-400" />
+                  <span>Beli via WhatsApp (081992020296)</span>
+                </a>
+              </div>
+            </div>
+
+            {/* Mint Candle */}
+            <div className="bg-white rounded-2xl border border-zinc-200 p-6 shadow-md hover:shadow-lg transition-all flex flex-col justify-between" id="candle-mint">
+              <div>
+                <div className="relative h-44 w-full bg-emerald-50/30 rounded-xl mb-5 flex items-center justify-center overflow-hidden border border-emerald-100" id="candle-mint-img-placeholder">
+                  <div className="absolute inset-0 bg-gradient-to-tr from-emerald-100/30 via-transparent to-transparent"></div>
+                  <div className="text-center p-4">
+                    <Flame className="h-10 w-10 text-emerald-500 mx-auto animate-pulse mb-2" />
+                    <span className="text-[10px] font-bold text-emerald-700 uppercase tracking-wide bg-emerald-50 border border-emerald-100 px-2.5 py-0.5 rounded-full">Mint & Eucalyptus</span>
+                  </div>
+                </div>
+                <div className="flex justify-between items-start gap-3 mb-2">
+                  <h3 className="font-extrabold text-zinc-900 text-base leading-tight">Lilin Aromaterapi Mint & Eucalyptus</h3>
+                  <span className="text-[10px] font-extrabold bg-zinc-100 text-zinc-700 border border-zinc-200 px-2 py-0.5 rounded whitespace-nowrap">60gr</span>
+                </div>
+                <p className="text-zinc-500 text-xs leading-relaxed mb-6">
+                  Menyegarkan pernapasan ruang tamu, melegakan peredaran oksigen, sekaligus ampuh mengusir nyamuk secara ramah lingkungan.
+                </p>
+              </div>
+              <div>
+                <div className="flex items-center justify-between border-t border-zinc-100 pt-4 mb-4">
+                  <span className="text-zinc-400 text-xs">Harga Jual</span>
+                  <span className="text-xl font-black text-zinc-950 font-mono">Rp 27.000</span>
+                </div>
+                <a
+                  href="https://wa.me/6281992020296?text=Halo%20EcoOil,%20saya%20mau%20order%20Lilin%20Aromaterapi%20Mint"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full py-3 bg-zinc-950 hover:bg-zinc-800 text-white !text-white rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2 shadow-sm cursor-pointer"
+                  id="buy-mint-wa"
+                >
+                  <MessageSquare className="h-4 w-4 text-emerald-400" />
+                  <span>Beli via WhatsApp (081992020296)</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ================= MERGED PROFIL / TENTANG KAMI SECTION ================= */}
+        <section className="pt-16 border-t border-zinc-200" id="tentang-kami-section">
+          <div className="text-center mb-12">
+            <span className="text-xs uppercase font-extrabold text-emerald-750 tracking-wider bg-emerald-50 px-3 py-1 rounded-md border border-emerald-100 inline-block mb-3">TENTANG KAMI</span>
+            <h2 className="text-2xl sm:text-3xl font-black text-zinc-950 tracking-tight" id="profile-title">
+              Membangun Masa Depan Hijau Bersama EcoOil
+            </h2>
+            <p className="text-xs sm:text-sm text-zinc-550 max-w-2xl mx-auto mt-2 leading-relaxed">
+              Inisiatif sirkular kami berkomitmen tinggi menyaring limbah cair berlemak dapur rumah tangga dan sisa katering komersial menjadi lilin aromaterapi dan energi alternatif terbarukan.
+            </p>
+          </div>
+
+          {/* Corporate Dashboard Highlights */}
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mb-12" id="metrics-grid">
+            <div className="bg-zinc-50 border border-zinc-200 p-6 rounded-xl text-center" id="metric-1">
+              <span className="block text-2xl sm:text-3xl font-black text-emerald-700 mb-1 font-mono" id="val-1">245.000+</span>
+              <span className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest">Liter Terkumpul</span>
+            </div>
+            <div className="bg-zinc-50 border border-zinc-200 p-6 rounded-xl text-center" id="metric-2">
+              <span className="block text-2xl sm:text-3xl font-black text-emerald-700 mb-1 font-mono" id="val-2">8.900+</span>
+              <span className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest">Mitra Terdaftar</span>
+            </div>
+            <div className="bg-zinc-50 border border-zinc-200 p-6 rounded-xl text-center col-span-2 md:col-span-1" id="metric-3">
+              <span className="block text-2xl sm:text-3xl font-black text-emerald-700 mb-1 font-mono" id="val-3">612,5 Ton</span>
+              <span className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest">Reduksi Karbon (CO₂)</span>
+            </div>
+          </div>
+
+          {/* Value Pillars */}
+          <div className="grid md:grid-cols-2 gap-8 mb-16" id="pillars-grid">
+            <div className="flex gap-4" id="pillar-sustainability">
+              <div className="flex-none p-3 h-11 w-11 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center" id="pill-wrap-1">
+                <Leaf className="h-5 w-5" id="pill-icon-1" />
+              </div>
+              <div>
+                <h3 className="text-sm font-bold text-zinc-900 mb-1">Keberlanjutan Bersertifikat</h3>
+                <p className="text-xs text-zinc-500 leading-relaxed" id="pill-desc-1">
+                  Seluruh limbah yang terkumpul diproses murni ke produsen energi alternatif berlisensi global ISCC dengan standardisasi industri tinggi.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex gap-4" id="pillar-fairness">
+              <div className="flex-none p-3 h-11 w-11 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center" id="pill-wrap-2">
+                <Award className="h-5 w-5" id="pill-icon-2" />
+              </div>
+              <div>
+                <h3 className="text-sm font-bold text-zinc-900 mb-1">Insentif Adil, Berpihak pada Masyarakat</h3>
+                <p className="text-xs text-zinc-500 leading-relaxed" id="pill-desc-2">
+                  Acuan bagi konversi tabungan dibuat serealistis mungkin agar memberikan insentif balik yang setinggi mungkin bagi masyarakat umum.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex gap-4" id="pillar-security">
+              <div className="flex-none p-3 h-11 w-11 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center" id="pill-wrap-3">
+                <ShieldCheck className="h-5 w-5" id="pill-icon-3" />
+              </div>
+              <div>
+                <h3 className="text-sm font-bold text-zinc-900 mb-1">Proses Aman & Ramah</h3>
+                <p className="text-xs text-zinc-500 leading-relaxed" id="pill-desc-3">
+                  Ditimbang menggunakan standardisasi presisi mutlak berbasis digital timbangan untuk mencegah kecurangan takaran.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex gap-4" id="pillar-empowerment">
+              <div className="flex-none p-3 h-11 w-11 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center" id="pill-wrap-4">
+                <Users className="h-5 w-5" id="pill-icon-4" />
+              </div>
+              <div>
+                <h3 className="text-sm font-bold text-zinc-900 mb-1">Pemberdayaan Kolektif</h3>
+                <p className="text-xs text-zinc-500 leading-relaxed" id="pill-desc-4">
+                  Memberikan hasil tambahan yang berharga bagi ibu rumah tangga, pos karang taruna kelurahan, UMKM gorengan, serta koordinator daerah.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Contact and Office Info */}
+          <div className="bg-zinc-900 text-white border border-zinc-800 rounded-2xl p-8" id="profile-contact-section">
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div id="contact-info-block">
+                <h3 className="text-lg font-bold mb-2 text-white" id="contact-title">Kantor Layanan Pusat EcoOil</h3>
+                <p className="text-xs text-zinc-400 mb-6 leading-relaxed animate-fade-in" id="contact-info-desc">
+                  Apakah Anda mengelola katering, hotel, atau rantai restoran komersial skala besar? Hubungi tim logistik kami untuk fasilitas tangki pembuangan reguler secara gratis.
+                </p>
+                <div className="space-y-3.5 text-xs text-zinc-305" id="contact-items">
+                  <div className="flex items-center gap-3">
+                    <MapPin className="h-5 w-5 text-emerald-450 flex-none" />
+                    <span>Kawasan Industri Lingkungan Hidup, Gedung C, JKT</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Mail className="h-5 w-5 text-emerald-450 flex-none" />
+                    <span>partnership@ecooil.id</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Phone className="h-5 w-5 text-emerald-450 flex-none" />
+                    <span>+62 811-2345-6789 (Jam Kerja Operational)</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-zinc-800 rounded-xl border border-zinc-700/80 p-6 flex flex-col justify-center text-center shadow-sm" id="partner-cta-block">
+                <Milestone className="h-8 w-8 text-emerald-450 mx-auto mb-3" id="partner-cta-icon" />
+                <h4 className="text-sm font-bold text-white">Program Penyetor Teratur</h4>
+                <p className="text-xs text-zinc-400 my-2 leading-relaxed">
+                  Gabung sebagai Koordinator Poin daerah kelurahan Anda dan raih profit margin berkelanjutan eksklusif setiap bulan.
+                </p>
+                <a
+                  href="https://wa.me/6281992020296?text=Halo%2520EcoOil%252C%2520saya%2520tertarik%2520mendaftar%2520sebagai%2520Penyetor%2520Teratur."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-2 w-full py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-lg transition-colors inline-block text-center cursor-pointer shadow-sm"
+                  id="partner-btn"
+                >
+                  Hubungi Hub Kami
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </main>
+  );
+}

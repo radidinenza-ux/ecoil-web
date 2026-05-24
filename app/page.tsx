@@ -34,8 +34,8 @@ export default function Home() {
   const pricePerLiterCash = 2000; // Rp 2.000 / Liter standard cash rate
   const pointsPerLiter = 4;        // 4 Poin / Liter standard loyalty rate
 
-  const calculatedCash = liters * pricePerLiterCash;
-  const calculatedPoints = liters * pointsPerLiter;
+  const calculatedCash = incentiveType === "CASH" ? liters * pricePerLiterCash : 0;
+const calculatedPoints = incentiveType === "POINTS" ? liters * pointsPerLiter : 0;
 
   const cleanWaterSaved = liters * 1000000; // Environmental conversion metrics
   const co2Reduced = (liters * 2.5).toFixed(1);

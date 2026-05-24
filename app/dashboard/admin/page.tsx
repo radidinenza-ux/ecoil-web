@@ -408,7 +408,7 @@ export default function AdminDashboardPage() {
                         </tr>
                       );
                     })()}
-                  </tbody> 
+                  </tbody>
       </div>
     </main>
   );

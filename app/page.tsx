@@ -27,14 +27,14 @@ import { useApp } from "@/components/context";
 
 export default function Home() {
   const [liters, setLiters] = useState<number>(15);
-  const [incentiveType, setIncentiveType] = useState<"CASH" | "POINTS">("CASH");
+  const [incentiveType, setIncentiveType] = useState<"CASH" | "POINTS" | null>(null);
   const { gradePrices } = useApp();
 
   // Calculation parameters from revision instructions
   const pricePerLiterCash = 2000; // Rp 2.000 / Liter standard cash rate
   const pointsPerLiter = 4;        // 4 Poin / Liter standard loyalty rate
 
-  const calculatedCash = incentiveType === "CASH" ? liters * pricePerLiterCash : 0;
+ const calculatedCash = incentiveType === "CASH" ? liters * pricePerLiterCash : 0;
 const calculatedPoints = incentiveType === "POINTS" ? liters * pointsPerLiter : 0;
 
   const cleanWaterSaved = liters * 1000000; // Environmental conversion metrics
@@ -54,7 +54,31 @@ const calculatedPoints = incentiveType === "POINTS" ? liters * pointsPerLiter : 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-zinc-950 tracking-tight max-w-4xl mx-auto mb-6 leading-none" id="hero-title">
             Jangan Buang, <span className="text-emerald-600">Ubah Jadi Cuan</span>.<br className="hidden sm:inline" /> Mengubah Limbah Menjadi Nilai.
           </h1>
-          
+          {/* BAGIAN TOMBOL PILIHAN EKA */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+            <button
+              type="button"
+              onClick={() => setIncentiveType("CASH")}
+              className={`px-8 py-4 rounded-xl font-bold border-2 transition-all ${
+                incentiveType === "CASH" 
+                ? "border-emerald-600 bg-emerald-50 text-emerald-900" 
+                : "border-zinc-200 bg-white text-zinc-700 hover:border-zinc-300"
+              }`}
+            >
+              Bayar Tunai
+            </button>
+            <button
+              type="button"
+              onClick={() => setIncentiveType("POINTS")}
+              className={`px-8 py-4 rounded-xl font-bold border-2 transition-all ${
+                incentiveType === "POINTS" 
+                ? "border-emerald-600 bg-emerald-50 text-emerald-900" 
+                : "border-zinc-200 bg-white text-zinc-700 hover:border-zinc-300"
+              }`}
+            >
+              Tukar Point (Bisa Jadi Lilin)
+            </button>
+          </div>
           <p className="text-base sm:text-lg text-zinc-650 max-w-2xl mx-auto mb-8 leading-relaxed" id="hero-description">
             EcoOil adalah pelopor sistem pengumpulan minyak jelantah saringan dari masyarakat dan pelaku kuliner. Kami mengolah kembali limbah cair dapur Anda menjadi lilin aromaterapi ramah lingkungan dan sumber biodiesel berkelanjutan.
           </p>

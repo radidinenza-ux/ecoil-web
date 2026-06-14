@@ -55,30 +55,32 @@ const calculatedPoints = incentiveType === "POINTS" ? liters * pointsPerLiter : 
             Jangan Buang, <span className="text-emerald-600">Ubah Jadi Cuan</span>.<br className="hidden sm:inline" /> Mengubah Limbah Menjadi Nilai.
           </h1>
           {/* BAGIAN TOMBOL PILIHAN EKA */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-            <button
-              type="button"
-              onClick={() => setIncentiveType("CASH")}
-              className={`px-8 py-4 rounded-xl font-bold border-2 transition-all ${
-                incentiveType === "CASH" 
-                ? "border-emerald-600 bg-emerald-50 text-emerald-900" 
-                : "border-zinc-200 bg-white text-zinc-700 hover:border-zinc-300"
-              }`}
+         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 my-8">
+  <button
+    type="button"
+    onClick={() => setIncentiveType("CASH")}
+    className={`px-8 py-4 rounded-xl font-bold border-2 transition-all ${
+      incentiveType === "CASH" 
+      ? "border-emerald-600 bg-emerald-50 text-emerald-900" 
+      : "border-zinc-200 bg-white text-zinc-700 hover:border-zinc-300"
+    }`}
+  >
+    Terima Uang Tunai
+  </button>
+  <button
+    type="button"
+    onClick={() => setIncentiveType("POINTS")}
+    className={`px-8 py-4 rounded-xl font-bold border-2 transition-all ${
+      incentiveType === "POINTS" 
+      ? "border-emerald-600 bg-emerald-50 text-emerald-900" 
+      : "border-zinc-200 bg-white text-zinc-700 hover:border-zinc-300"
+    }`}
+  >
+    Tukar Point (Bisa Jadi Lilin)
+  </button>
+</div>
             >
-              Bayar Tunai
-            </button>
-            <button
-              type="button"
-              onClick={() => setIncentiveType("POINTS")}
-              className={`px-8 py-4 rounded-xl font-bold border-2 transition-all ${
-                incentiveType === "POINTS" 
-                ? "border-emerald-600 bg-emerald-50 text-emerald-900" 
-                : "border-zinc-200 bg-white text-zinc-700 hover:border-zinc-300"
-              }`}
-            >
-              Tukar Point (Bisa Jadi Lilin)
-            </button>
-          </div>
+             
           <p className="text-base sm:text-lg text-zinc-650 max-w-2xl mx-auto mb-8 leading-relaxed" id="hero-description">
             EcoOil adalah pelopor sistem pengumpulan minyak jelantah saringan dari masyarakat dan pelaku kuliner. Kami mengolah kembali limbah cair dapur Anda menjadi lilin aromaterapi ramah lingkungan dan sumber biodiesel berkelanjutan.
           </p>
